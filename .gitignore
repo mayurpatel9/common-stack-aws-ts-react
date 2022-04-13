@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/.vscode/settings.json
+
+# dependencies
+node_modules
+/.pnp
+.pnp.js
+Brewfile.lock.json
+/spa/package-lock.json
+
+# testing
+/coverage
+/scripts/coverage
+/cypress/screenshots
+/cypress/videos
+cypress.env.json
+
+# production
+/build/
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env
+env.json
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+amplify.log
+
+# cdk
+cdk.out
+
+# lambda packaged node_modules
+*build.zip
+
+packaged.yml
+
+# gnu make timestamped files
+*-stamp
+
+temp/
+temp.json
+
+# typescript lambda transpiled js
+**/dist/

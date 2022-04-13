@@ -7,7 +7,7 @@ export class CdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const duration = new CfnParameter(this, 'duration', {
+    const days = new CfnParameter(this, 'duration', {
       type: 'Number',
       default: 6,
       minValue: 1,
@@ -15,13 +15,13 @@ export class CdkStack extends Stack {
 
     })
 
-    const myBucket = new Bucket(this, 'bucket', {
+    const myBucket = new Bucket(this, 'myBucket', {
       lifecycleRules: [{
-        expiration: Duration.days(duration.valueAsNumber)
+        expiration: Duration.days(days.valueAsNumber)
       }]
     })
 
-    new CfnOutput(this, 'bucket', {
+    new CfnOutput(this, 'outputBucket', {
       value: myBucket.bucketName
     });
  

@@ -1,0 +1,4 @@
+@endPoint = 'url'
+
+GET {{endPoint}}/hello/
+###
